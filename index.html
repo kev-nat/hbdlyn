@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .form-container {
+            display: none;
+        }
+        .form-container.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="login-form" class="form-container active">
+            <form action="">
+                <h1>Login</h1>
+                
+                <!-- Username -->
+                <div class="input-box">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <!-- Password -->
+                <div class="input-box">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me </label>
+                    <p><a href="#" onclick="showSignUp()"> Forgot Password? </a></p>
+                </div>
+
+                <button class="btn" type="button" onclick="func()">
+                    Login
+                </button>
+
+            </form>
+        </div>
+        
+        <!-- Clues -->
+        <div id="signup-form" class="form-container">
+            <form action="">
+                <h1>Clues</h1>
+                
+                <div class="input-box">
+                    <p> Username: Last location when we first met </p> 
+                    <p> Password: Look at apahayo.txt </p> <br>
+                </div>
+                
+                <div class="register-link">
+                    <p><a href="#" onclick="showLogin()"> Back </a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showSignUp() {
+            document.getElementById('login-form').classList.remove('active');
+            document.getElementById('signup-form').classList.add('active');
+        }
+
+        function showLogin() {
+            document.getElementById('signup-form').classList.remove('active');
+            document.getElementById('login-form').classList.add('active');
+        }
+    </script>
+
+    <script>
+        function func() {
+            var username = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            if (username == 'Marks & Spencer Bintaro Jaya Xchange Mall 2' && pass == '617081S10643467E') {
+                alert("okee kerenn");
+                window.location.assign("main.html");
+            } else {
+                alert("coba lagi yaaa");
+            }
+        }
+    </script>
+</body>
+</html>
